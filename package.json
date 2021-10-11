@@ -1,6 +1,6 @@
 {
   "name": "react-leaflet-custom-control",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Creates a control wrapper around a React element",
   "main": "Control.tsx",
   "author": "chris-m92",
