@@ -33,8 +33,12 @@ import 'leaflet.css'
 
 <MapContainer center={[35.77, -93.34]} zoom={5}>
   <TileLayer
-    url='https://{s}.tile.openstreetmap.lorg/{z}/{x}/{y}.png'
-    attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    attribution="Esri, DigitalGlobe, GeoEye, Earthstar Geographics, CNES/Airbus DS, USDA, USGS, AeroGRID, IGN, and the GIS User Community"
+    className="basemap"
+    maxNativeZoom={19}
+    maxZoom={19}
+    subdomains={["clarity"]}
+    url="https://{s}.maptiles.arcgis.com/arcgis/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
   />
   <Control position='topright'>
     <Button color='inherit'> 
