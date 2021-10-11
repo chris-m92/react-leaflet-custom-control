@@ -1,0 +1,43 @@
+{
+  "name": "react-leaflet-custom-control",
+  "version": "1.0.0",
+  "description": "Creates a control wrapper around a React element",
+  "main": "Control.tsx",
+  "author": "chris-m92",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chris-m92/react-leaflet-custom-control.git"
+  },
+  "keywords": [
+    "react",
+    "leaflet",
+    "react-leaflet",
+    "react-leaflet-v3",
+    "react-leaflet-control",
+    "react-leaflet-custom-control"
+  ],
+  "peerDependencies": {
+    "leaflet": "^1.7.1",
+    "react-leaflet": "^3.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@testing-library/user-event": "^12.8.3",
+    "@types/jest": "^26.0.24",
+    "@types/node": "^12.20.28",
+    "@types/react": "^17.0.27",
+    "@types/react-dom": "^17.0.9",
+    "@types/leaflet": "^1.7.5",
+    "@types/react-leaflet": "^2.8.2",
+    "react-scripts": "4.0.3",
+    "typescript": "^4.4.3"
+  },
+  "bugs": {
+    "url": "https://github.com/chris-m92/react-leaflet-custom-control/issues"
+  },
+  "homepage": "https://github.com/chris-m92/react-leaflet-custom-control#readme"
+}
