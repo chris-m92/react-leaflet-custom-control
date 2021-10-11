@@ -1,7 +1,7 @@
 # react-leaflet-custom-control
 [![npm](https://img.shields.io/npm/v/react-leaflet-custom-control.svg)](https://npmjs.com/package/react-leaflet-custom-control)
 [![npm](https://img.shields.io/npm/dt/react-leaflet-custom-control.svg)](https://npmjs.com/package/react-leaflet-custom-control)
-[![license](https://img.shields.io/github.license/chris-m92/react-leaflet-custom-control.svg)](https://github.com/chris-m92/react-leaflet-custom-control)
+[![license](https://img.shields.io/github/license/chris-m92/react-leaflet-custom-control.svg)](https://github.com/chris-m92/react-leaflet-custom-control)
 
 
 A React wrapper to create a custom control for [react-leaflet](https://github.com/PaulLeCam/react-leaflet)
