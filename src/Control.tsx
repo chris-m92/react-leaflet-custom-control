@@ -1,40 +1,38 @@
 import React from 'react'
-import {
-  useLeafletContext
-} from '@react-leaflet/core'
 import L from 'leaflet'
 import ReactDOM from 'react-dom'
 
 interface Props {
   position: L.ControlPosition
-  className?: string
-  children?: any
+  children?: React.ReactNode
 }
 
-const Control = (props: Props) => {
-  const context = useLeafletContext()
+const POSITION_CLASSES = {
+  bottomleft: 'leaflet-bottom leaflet-left',
+  bottomright: 'leaflet-bottom leaflet-right',
+  topleft: 'leaflet-top leaflet-left',
+  topright: 'leaflet-top leaflet-right',
+}
 
-  const control = L.Control.extend({
-    onAdd: () => {
-      const _controlDiv = L.DomUtil.create('div', props.className)
-      L.DomEvent.disableClickPropagation(_controlDiv)
-      ReactDOM.render(props.children, _controlDiv)
-      return _controlDiv
-    },
-    onRemove: () => {},
-  })
+const Control = (props: Props): JSX.Element => {
+  const [container, setContainer] = React.useState<any>(document.createElement('div'))
+  const positionClass = (props.position && POSITION_CLASSES[props.position] || POSITION_CLASSES.topright)
 
   React.useEffect(() => {
-    const container = context.map
-    const newControl = new control({ position: props.position })
-    container.addControl(newControl)
+    const targetDiv = document.getElementsByClassName(positionClass)
+    setContainer(targetDiv[0])
+  }, [])
 
-    return () => {
-      container.removeControl(newControl)
-    }
-  })
+  const controlContainer = (
+    <div className='leaflet-control leaflet-bar'>{props.children}</div>
+  )
 
-  return null
+  L.DomEvent.disableClickPropagation(container)
+
+  return ReactDOM.createPortal(
+    controlContainer,
+    container
+  )
 }
 
 export default Control

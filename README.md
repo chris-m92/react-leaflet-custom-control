@@ -4,19 +4,11 @@
 [![license](https://img.shields.io/github/license/chris-m92/react-leaflet-custom-control.svg)](https://github.com/chris-m92/react-leaflet-custom-control)
 
 
-A React wrapper to create a custom control for [react-leaflet](https://github.com/PaulLeCam/react-leaflet)
+A React wrapper to create a custom control for [react-leaflet](https://github.com/PaulLeCam/react-leaflet) using ReactDOM's Portal capabilities
 
 The current version of this package supports React Leaflet v3
 
 [Code Sandbox Demo](https://codesandbox.io/s/n1xpv)
-
-## Dependencies
-|Name|Version|
-|--|--|
-|leaflet|`^1.7.1`|
-|react-leaflet|`^3.2.1`|
-|react|`^17.0.2`|
-|react-dom|`^17.0.2`|
 
 ## Installation
 ```bash
@@ -52,5 +44,5 @@ import 'leaflet.css'
 | Name       | Type                                                                 | Default      | Description                      |
 |------------|----------------------------------------------------------------------|--------------|----------------------------------|
 | position   | [ControlOptions](https://leafletjs.com/reference-1.7.1.html#control) | **required** | The position of the control      |
-| className? | string                                                               | undefined    | Class name to add to the control |
 | children?  | any                                                                  | undefined    | Child element to the control     |
+
