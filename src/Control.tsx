@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom'
 interface Props {
   position: L.ControlPosition
   children?: React.ReactNode
+  style?: React.CSSProperties
 }
 
 const POSITION_CLASSES = {
@@ -16,15 +17,15 @@ const POSITION_CLASSES = {
 
 const Control = (props: Props): JSX.Element => {
   const [container, setContainer] = React.useState<any>(document.createElement('div'))
-  const positionClass = (props.position && POSITION_CLASSES[props.position] || POSITION_CLASSES.topright)
+  const positionClass = ((props.position && POSITION_CLASSES[props.position]) || POSITION_CLASSES.topright)
 
   React.useEffect(() => {
     const targetDiv = document.getElementsByClassName(positionClass)
     setContainer(targetDiv[0])
-  }, [])
+  }, [positionClass])
 
   const controlContainer = (
-    <div className='leaflet-control leaflet-bar'>{props.children}</div>
+    <div className='leaflet-control leaflet-bar' style={props.style}>{props.children}</div>
   )
 
   L.DomEvent.disableClickPropagation(container)

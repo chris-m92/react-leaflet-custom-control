@@ -41,8 +41,8 @@ import 'leaflet.css'
 ```
 
 ## Props
-| Name       | Type                                                                 | Default      | Description                      |
-|------------|----------------------------------------------------------------------|--------------|----------------------------------|
-| position   | [ControlOptions](https://leafletjs.com/reference-1.7.1.html#control) | **required** | The position of the control      |
-| children?  | any                                                                  | undefined    | Child element to the control     |
-
+| Name       | Type                                                                 | Default      | Description                        |
+|------------|----------------------------------------------------------------------|--------------|------------------------------------|
+| position   | [ControlOptions](https://leafletjs.com/reference-1.7.1.html#control) | **required** | The position of the control        |
+| children?  | any                                                                  | undefined    | Child element to the control       |
+| style?     | `React.CSSProperties`                                                | undefined    | CSS Styles to override the control |
