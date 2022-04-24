@@ -10,7 +10,7 @@ The current version of this package supports React Leaflet v3
 
 [Code Sandbox Demo](https://codesandbox.io/s/n1xpv)
 
-**WARNING** Version 1.2.3 has updated peer dependencies for React v18. This may be a breaking change depending on your environment. If you are still running React v17 then install version 1.2.2
+**WARNING** Version `^1.2.3` (which adds this note to the README) has updated peer dependencies for React v18. This may be a breaking change depending on your environment. If you are still running React v17 then install version 1.2.2.
 
 ## Installation
 ```bash
