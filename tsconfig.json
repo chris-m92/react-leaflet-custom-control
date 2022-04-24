@@ -21,7 +21,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "sourceMap": true,
-    "jsx": "react-jsx"
+    "jsx": "react"
   },
   "include": [
     "./src/*"
