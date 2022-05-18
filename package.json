@@ -1,6 +1,6 @@
 {
   "name": "react-leaflet-custom-control",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "description": "Creates a control wrapper around a React element",
   "main": "lib/Control.js",
   "author": "chris-m92",
@@ -19,8 +19,8 @@
   ],
   "peerDependencies": {
     "leaflet": "^1.7.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "react": "^17.0.2 || ^18.0.0",
+    "react-dom": "^17.0.2 || ^18.0.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.16.4",
