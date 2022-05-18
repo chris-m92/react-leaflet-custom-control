@@ -6,6 +6,7 @@ interface Props {
   position: L.ControlPosition
   children?: React.ReactNode
   style?: React.CSSProperties
+  prepend?: boolean
 }
 
 const POSITION_CLASSES = {
@@ -16,23 +17,30 @@ const POSITION_CLASSES = {
 }
 
 const Control = (props: Props): JSX.Element => {
-  const [container, setContainer] = React.useState<any>(document.createElement('div'))
+  const [portalRoot, setPortalRoot] = React.useState<any>(document.createElement('div'))
   const positionClass = ((props.position && POSITION_CLASSES[props.position]) || POSITION_CLASSES.topright)
+  const portalContainer = document.createElement('div')
 
   React.useEffect(() => {
     const targetDiv = document.getElementsByClassName(positionClass)
-    setContainer(targetDiv[0])
+    setPortalRoot(targetDiv[0])
   }, [positionClass])
+
+  if (props.prepend !== undefined && props.prepend === true) {
+    portalRoot.prepend(portalContainer)
+  } else {
+    portalRoot.append(portalContainer)
+  }
 
   const controlContainer = (
     <div className='leaflet-control leaflet-bar' style={props.style}>{props.children}</div>
   )
 
-  L.DomEvent.disableClickPropagation(container)
+  L.DomEvent.disableClickPropagation(portalRoot)
 
   return ReactDOM.createPortal(
     controlContainer,
-    container
+    portalContainer
   )
 }
 
