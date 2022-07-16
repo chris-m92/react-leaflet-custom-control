@@ -1,9 +1,9 @@
-import React from 'react';
 import L from 'leaflet';
+import React from 'react';
 interface Props {
     position: L.ControlPosition;
     children?: React.ReactNode;
-    style?: React.CSSProperties;
+    container?: React.HTMLAttributes<HTMLDivElement>;
     prepend?: boolean;
 }
 declare const Control: (props: Props) => JSX.Element;

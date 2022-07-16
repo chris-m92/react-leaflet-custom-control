@@ -1,11 +1,11 @@
-import React from 'react'
 import L from 'leaflet'
+import React from 'react'
 import ReactDOM from 'react-dom'
 
 interface Props {
   position: L.ControlPosition
   children?: React.ReactNode
-  style?: React.CSSProperties
+  container?: React.HTMLAttributes<HTMLDivElement>
   prepend?: boolean
 }
 
@@ -32,8 +32,10 @@ const Control = (props: Props): JSX.Element => {
     portalRoot.append(portalContainer)
   }
 
+  const className = (props.container?.className?.concat(' ') || '') + 'leaflet-control'
+  const container = { ...props.container, className }
   const controlContainer = (
-    <div className='leaflet-control leaflet-bar' style={props.style}>{props.children}</div>
+    <div {... container}>{props.children}</div>
   )
 
   L.DomEvent.disableClickPropagation(portalRoot)
