@@ -89,9 +89,13 @@ import 'leaflet.css'
 ```
 
 ## Props
-| Name       | Type                                                                 | Default      | Description                        |
-|------------|----------------------------------------------------------------------|--------------|------------------------------------|
-| position   | [ControlOptions](https://leafletjs.com/reference-1.7.1.html#control) | **required** | The position of the control        |
-| children?  | any                                                                  | undefined    | Child element to the control       |
-| style?     | `React.CSSProperties`                                                | undefined    | CSS Styles to override the control |
-| prepend?   | boolean                                                              | undefined    | Whether the control should be prepended or appended to the position|
+| Name           | Type                                                                 | Default          | Description                        |
+|----------------|----------------------------------------------------------------------|------------------|------------------------------------|
+| position       | [ControlOptions](https://leafletjs.com/reference-1.7.1.html#control) | **required**     | The position of the control        |
+| children?      | any                                                                  | undefined        | Child element to the control       |
+| ~~style?~~     | ~~`React.CSSProperties`~~                                            | ~~undefined~~    | ~~CSS Styles to override the control~~ |
+| container?     | `React.HTMLAttributes<HTMLDivElement>`                               | undefined        | The target root container for the portal |
+| prepend?       | boolean                                                              | undefined        | Whether the control should be prepended or appended to the position|
+
+## Thanks
+Huge thanks to @davetapley for contributing to `@1.3.0` and helping to work some of the issues.
