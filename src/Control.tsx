@@ -1,6 +1,5 @@
 import L from 'leaflet'
 import React from 'react'
-import ReactDOM from 'react-dom'
 
 interface Props {
   position: L.ControlPosition
@@ -19,30 +18,30 @@ const POSITION_CLASSES = {
 const Control = (props: Props): JSX.Element => {
   const [portalRoot, setPortalRoot] = React.useState<any>(document.createElement('div'))
   const positionClass = ((props.position && POSITION_CLASSES[props.position]) || POSITION_CLASSES.topright)
-  const portalContainer = document.createElement('div')
+  const controlContainerRef = React.createRef<HTMLDivElement>()
 
   React.useEffect(() => {
     const targetDiv = document.getElementsByClassName(positionClass)
     setPortalRoot(targetDiv[0])
   }, [positionClass])
 
-  if (props.prepend !== undefined && props.prepend === true) {
-    portalRoot.prepend(portalContainer)
-  } else {
-    portalRoot.append(portalContainer)
-  }
+  React.useEffect(() => {
+    if (portalRoot !== null) {
+      if (props.prepend !== undefined && props.prepend === true) {
+        portalRoot.prepend(controlContainerRef.current)
+      } else {
+        portalRoot.append(controlContainerRef.current)
+      }
+    }
+  }, [portalRoot, props.prepend, controlContainerRef])
 
-  const className = (props.container?.className?.concat(' ') || '') + 'leaflet-control'
-  const container = { ...props.container, className }
-  const controlContainer = (
-    <div {... container}>{props.children}</div>
-  )
-
-  L.DomEvent.disableClickPropagation(portalRoot)
-
-  return ReactDOM.createPortal(
-    controlContainer,
-    portalContainer
+  return (
+    <div
+      ref={controlContainerRef}
+      className='leaflet-control'
+    >
+      {props.children}
+    </div>
   )
 }
 

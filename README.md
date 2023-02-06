@@ -99,3 +99,4 @@ import 'leaflet.css'
 
 ## Thanks
 Huge thanks to @davetapley for contributing to `@1.3.0` and helping to work some of the issues.
+Thanks to @samiamlabs for contributing to `@1.3.2` for fixing the infinite `div` issue.
