@@ -78,12 +78,13 @@ import 'leaflet.css'
   {/* This control will be below the default zoom control. Note the wrapping Stack component */}
   <Control position='topright'>
     <Stack direction='column' spacing={2} >
-    <Button color='inherit'>
-      <AddIcon />
-    </Button>    
-    <Button color='inherit'>
-      <DeleteIcon />
-    </Button>
+      <Button color='inherit'>
+        <AddIcon />
+      </Button>    
+      <Button color='inherit'>
+        <DeleteIcon />
+      </Button>
+    </Stack>
   </Control>
 </MapContainer>
 ```
