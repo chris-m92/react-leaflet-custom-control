@@ -5,6 +5,7 @@
   "main": "lib/Control.js",
   "author": "chris-m92",
   "license": "MIT",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chris-m92/react-leaflet-custom-control.git"
