@@ -35,10 +35,12 @@ const Control = (props: Props): JSX.Element => {
     }
   }, [portalRoot, props.prepend, controlContainerRef])
 
+  const className = (props.container?.className?.concat(' ') || '') + 'leaflet-control'
   return (
     <div
+      {...props.container}
       ref={controlContainerRef}
-      className='leaflet-control'
+      className={className}
     >
       {props.children}
     </div>
