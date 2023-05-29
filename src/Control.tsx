@@ -1,4 +1,4 @@
-import L from 'leaflet'
+import L, { control } from 'leaflet'
 import React from 'react'
 
 interface Props {
@@ -19,6 +19,13 @@ const Control = (props: Props): JSX.Element => {
   const [portalRoot, setPortalRoot] = React.useState<any>(document.createElement('div'))
   const positionClass = ((props.position && POSITION_CLASSES[props.position]) || POSITION_CLASSES.topright)
   const controlContainerRef = React.createRef<HTMLDivElement>()
+
+  React.useEffect(() => {
+    if (controlContainerRef.current !== null) {
+      L.DomEvent.disableClickPropagation(controlContainerRef.current)
+      L.DomEvent.disableScrollPropagation(controlContainerRef.current)
+    }
+  }, [controlContainerRef])
 
   React.useEffect(() => {
     const targetDiv = document.getElementsByClassName(positionClass)
