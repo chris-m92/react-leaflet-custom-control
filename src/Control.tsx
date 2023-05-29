@@ -21,6 +21,13 @@ const Control = (props: Props): JSX.Element => {
   const controlContainerRef = React.createRef<HTMLDivElement>()
 
   React.useEffect(() => {
+    if (controlContainerRef.current) {
+      L.DomEvent.disableClickPropagation(controlContainerRef.current);
+      L.DomEvent.disableScrollPropagation(controlContainerRef.current);
+    }
+  }, [controlContainerRef])
+
+  React.useEffect(() => {
     const targetDiv = document.getElementsByClassName(positionClass)
     setPortalRoot(targetDiv[0])
   }, [positionClass])
