@@ -10,11 +10,19 @@ The current version of this package supports React Leaflet v3
 
 [Code Sandbox Demo](https://codesandbox.io/s/n1xpv)
 
-**WARNING** Version `^1.2.3` (which adds this note to the README) has updated peer dependencies for React v18. This may be a breaking change depending on your environment. If you are still running React v17 then install version 1.2.2.
+**NOTE** 
+||
+|--|
+|Version `^1.2.3` (which adds this note to the README) has updated peer dependencies for React v18. This may be a breaking change depending on your environment. If you are still running React v17 then install version 1.2.2.|
+|Version `^1.4.0` now has a dependency on `react-leaflet@^4.2.1`. This allows for the `useMap()` hook. This also requires that this `Control` component **MUST** be a child of your `MapContainer`|
 
 ## Installation
 ```bash
+#npm
 npm install --save react-leaflet-custom-control
+
+#yarn
+yarn add react-leaflet-custom-control
 ```
 
 ## Usage
