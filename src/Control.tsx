@@ -19,7 +19,7 @@ const POSITION_CLASSES = {
 const Control = (props: Props): JSX.Element => {
   const [portalRoot, setPortalRoot] = React.useState<any>(document.createElement('div'))
   const positionClass = ((props.position && POSITION_CLASSES[props.position]) || POSITION_CLASSES.topright)
-  const controlContainerRef = React.createRef<HTMLDivElement>()
+  const controlContainerRef = React.useRef<HTMLDivElement | null>(null)
   const map = useMap()
 
   /**
